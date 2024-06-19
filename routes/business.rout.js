@@ -2,9 +2,6 @@ const express = require('express');
 const businessController = require('../controllers/business.controller');
 const { checkAdminRole, authenticateToken } = require('../middleware/authenticate.middleware');
 
-// const userController = require('../controllers/userController');
-// const authMiddleware = require('../middlewares/authMiddleware');
-
 const router = express.Router();
 
 router.get('/', authenticateToken, checkAdminRole, businessController.getBusinesses);
