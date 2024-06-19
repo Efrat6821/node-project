@@ -28,7 +28,7 @@ const signin = async (email, password, username) => {
             { user_id: user.id, username: user.username, email: user.email, role: user.role },
             process.env.TOKEN_KEY || '',
             {
-                expiresIn: '2h'
+                expiresIn: '8h'
             }
         );
         return token;
@@ -63,7 +63,7 @@ const signup = async (email, password, username) => {
             { user_id: newUser?.id, username, email, role: newUser?.role },
             process.env.TOKEN_KEY || '',
             {
-                expiresIn: '2h'
+                expiresIn: '8h'
             }
         );
         return token;

@@ -6,6 +6,8 @@ const businessRouter = require('./routes/business.rout');
 const meetingRouter = require('./routes/meeting.rout');
 const serviceRouter = require('./routes/services.rout');
 const userRouter = require('./routes/user.rout');
+const { verifyToken } = require('./middleware/authenticate.middleware');
+
 
 
 
@@ -14,6 +16,7 @@ app.use(cors());
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
+// app.use(verifyToken);
 app.use('/business', businessRouter);
 app.use('/meeting', meetingRouter);
 app.use('/service', serviceRouter);
