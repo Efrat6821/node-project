@@ -9,7 +9,8 @@ const authenticateToken = (req, res, next) => {
     try {
       const tokenKey = process.env.TOKEN_KEY || '';
       console.log('TOKEN_KEY:', tokenKey); 
-      const decoded = jwt.verify(token, tokenKey);
+      const tokenNew = token.split(' ')[1];
+      const decoded = jwt.verify(tokenNew, tokenKey);
       console.log(decoded);
       req.user = decoded;
       next();

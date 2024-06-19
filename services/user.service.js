@@ -56,7 +56,7 @@ const signup = async (email, password, username) => {
             id: newId,
             email,
             password: encryptedPassword,
-            role: 'admin'
+            role: 'user'
         };
         await UserModel.insertMany(newUser);
         const token = jwt.sign(
