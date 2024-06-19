@@ -5,9 +5,10 @@ const businessController = require('../controllers/business.controller');
 
 const router = express.Router();
 
-// router.get('/business');
+router.get('/', businessController.getBusinesses);
+router.get('/:id', businessController.getBusiness);
 router.post('/', businessController.addBusiness);
-// router.put('/business');
+router.put('/:id', businessController.updateBusiness);
 
 
 module.exports = router;
