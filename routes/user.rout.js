@@ -17,18 +17,15 @@ const router = express.Router();
  *         - password
  *         - username
  *       properties:
- *         id:
- *           type: integer
- *           description: The user ID
  *         email:
  *           type: string
  *           description: The user email
  *         username:
  *           type: string
  *           description: The user username
- *         role:
+ *         password:
  *           type: string
- *           description: The user role
+ *           description: The user password
  */
 
 /**
@@ -42,8 +39,10 @@ const router = express.Router();
  * @swagger
  * /user:
  *   get:
- *     summary: Returns the list of all the users
+ *     summary: Returns the list of all the users for admin
  *     tags: [Users]
+ *     security:
+ *       - bearerAuth: []
  *     responses:
  *       200:
  *         description: The list of the users

@@ -10,6 +10,8 @@ const authenticateToken = (req, res, next) => {
       const tokenKey = process.env.TOKEN_KEY || '';
       console.log('TOKEN_KEY:', tokenKey); 
       const tokenNew = token.split(' ')[1];
+      console.log(token);
+      console.log(tokenNew);
       const decoded = jwt.verify(tokenNew, tokenKey);
       console.log(decoded);
       req.user = decoded;
